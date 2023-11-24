@@ -10,12 +10,13 @@ import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
     val secretNumber = SecretNumber()
+    val TAG = MainActivity ::class.java.simpleName
 
     lateinit var edNumber : EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("MainActivity", "secret: " + secretNumber.secret)
+        Log.d(TAG, "secret: " + secretNumber.secret)
         findViews()
     }
 
@@ -26,22 +27,22 @@ class MainActivity : AppCompatActivity() {
     fun check(view: View){
         val n = edNumber.text.toString().toInt()
         val diff = secretNumber.validate(n)
-        var message = "Excellent! The number is"
+        var message = getString(R.string.excellent_the_number_is)
 
 //        println("number: $n")
-        Log.d("MainActivity", "number:" +n)
+        Log.d(TAG, "number:" +n)
         if (diff < 0){
-            message = "Bigger"
+            message = getString(R.string.bigger)
         }else if (diff > 0){
-            message = "Smaller"
+            message = getString(R.string.smaller)
         }else{
             message = "$message ${secretNumber.secret}"
         }
 //        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
         AlertDialog.Builder(this)
-            .setTitle("Message")
+            .setTitle(getString(R.string.message))
             .setMessage(message)
-            .setPositiveButton("ok", null)
+            .setPositiveButton(getString(R.string.ok), null)
             .show()
     }
 }
