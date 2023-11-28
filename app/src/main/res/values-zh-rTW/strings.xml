@@ -2,8 +2,14 @@
 <resources>
     <string name="app_name">homework3-1</string>
     <string name="please_enter_a_number">請輸入一個數字</string>
+    <string name="ok">確認</string>
     <string name="excellent_the_number_is">超神的！數字就是</string>
     <string name="bigger">大一點</string>
     <string name="smaller">小一點</string>
     <string name="message">對話訊息</string>
+    <string name="replay_game">重新遊戲</string>
+    <string name="are_you_sure">確定嗎？</string>
+    <string name="guess_times">猜了幾次：</string>
+    <string name="game_over">遊戲結束</string>
+    <string name="cancel">取消</string>
 </resources>
